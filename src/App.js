@@ -14,8 +14,10 @@ class App extends React.Component{
     highScore: 0
   };
 
+  // when the component updates
+  // (done this way because setState is asynch)
   componentDidUpdate() {
-    
+    // if there is a new highscore, update the score
     if (this.state.score > this.state.highScore)
       {
         this.setState({
@@ -24,7 +26,7 @@ class App extends React.Component{
       }
     }
 
-
+// when user clicks on a card
   cardClick = (id) => {
     
     console.log(id)
@@ -34,13 +36,12 @@ class App extends React.Component{
 
     // if its already been clicked
     if (friends[index].clicked == true){
-      //shake
       //you guessed incorrectly
-      //score = 0
+      
       this.setState({
         score: 0
       });
-      //shuffle
+      
       //set them all back to false
       friends.map(friend => friend.clicked = false)
 
@@ -61,19 +62,13 @@ class App extends React.Component{
     
     }
 
-    // // set the state of friends to the new friends array (with the clicked as true)
-    // this.setState({
-    //   friends
-      // });
-
-    // no matter what - 
+    // no matter what (if already been clicked or not)- 
     // shuffle the friends
     const shuffled = friends.sort(() => Math.random() - 0.5)
 
     // set the state of friends to the new friends array (with the clicked as true) and shuffled
     this.setState({
-      friends: shuffled,
-      // score: this.state.score + 1 
+      friends: shuffled 
     });
     
   }
@@ -89,9 +84,6 @@ class App extends React.Component{
       Top Score: {this.state.highScore}
     <Wrapper>
     
-    
-    
-
 
     {(this.state.friends).map(friend =>{
     return <FriendCard 
@@ -102,7 +94,8 @@ class App extends React.Component{
       occupation={friend.occupation} 
       location={friend.location} 
       cardClick ={this.cardClick}
-      shake = {this.state.score === 0}
+      // will be true if they lost, but not when the page first loads up
+      shake = {this.state.score === 0 && this.state.score !=== 0}
 
       />
       })
