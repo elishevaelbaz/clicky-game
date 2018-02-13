@@ -6,20 +6,6 @@ const FriendCard = props => (
     <div className="img-container" onClick={() => props.cardClick(props.id)}>
       <img alt={props.name} src={props.image} />
     </div>
-    <div className="content">
-      <ul>
-        <li>
-          <strong>Name:</strong> {props.name}
-        </li>
-        <li>
-          <strong>Occupation:</strong> {props.occupation}
-        </li>
-        <li>
-          <strong>Address:</strong> {props.location}
-        </li>
-      </ul>
-    </div>
-    
     
   </div>
 );
