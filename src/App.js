@@ -14,6 +14,16 @@ class App extends React.Component{
     highScore: 0
   };
 
+  componentDidUpdate() {
+    
+    if (this.state.score > this.state.highScore)
+      {
+        this.setState({
+        highScore: this.state.score
+        });
+      }
+    }
+
 
   cardClick = (id) => {
     
@@ -45,6 +55,10 @@ class App extends React.Component{
       this.setState({
         score: this.state.score + 1 
       });
+
+      console.log("score: " + this.state.score)
+      console.log("highscore: " + this.state.highScore)
+    
     }
 
     // // set the state of friends to the new friends array (with the clicked as true)
@@ -61,48 +75,43 @@ class App extends React.Component{
       friends: shuffled,
       // score: this.state.score + 1 
     });
-
-    if (this.state.score < this.state.highScore)
-    {
-      this.setState({
-      highScore: this.state.score
-      });
-    }
     
   }
 
 
-
-render (){
-  return (
+  render (){
+    return (
     
-    <div className="row">
-    <h1 className="title">Friends List</h1>
-    <Navbar/>
-  <Wrapper>
-    Score: {this.state.score}
+      <div className="row">
+      <h1 className="title">Friends List</h1>
+    
+      Score: {this.state.score}
+      Top Score: {this.state.highScore}
+    <Wrapper>
+    
+    
     
 
 
     {(this.state.friends).map(friend =>{
-  return <FriendCard 
-          key={friend.id} 
-          id={friend.id} 
-          name={friend.name} 
-          image={friend.image} 
-          occupation={friend.occupation} 
-          location={friend.location} 
-          cardClick ={this.cardClick}
+    return <FriendCard 
+      key={friend.id} 
+      id={friend.id} 
+      name={friend.name} 
+      image={friend.image} 
+      occupation={friend.occupation} 
+      location={friend.location} 
+      cardClick ={this.cardClick}
+      shake = {this.state.score === 0}
 
-          />
-  })
-}
+      />
+      })
+    }
 
-  </Wrapper>
-  </div>
-);
-}
-
+    </Wrapper>
+    </div>
+  );
+  }
 } 
 
 
