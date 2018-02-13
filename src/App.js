@@ -19,22 +19,47 @@ class App extends React.Component{
     
     console.log(id)
 
+    // find the index of the clicked item based on its id
     const index = friends.findIndex(item => item.id == id)
 
-    friends[index].clicked = true;
+    // if its already been clicked
+    if (friends[index].clicked == true){
+      //shake
+      //you guessed incorrectly
+      //score = 0
+      this.setState({
+        score: 0
+      });
+      //shuffle
+      //set them all back to false
+      friends.map(friend => friend.clicked = false)
 
-    console.log(friends[index])
+    }
 
-    this.setState({
-      friends
-    });
+    else{
+    // set its clicked property to true
+      friends[index].clicked = true;
 
+      console.log(friends[index])
 
+      this.setState({
+        score: this.state.score + 1 
+      });
+    }
+
+    // // set the state of friends to the new friends array (with the clicked as true)
+    // this.setState({
+    //   friends
+      // });
+
+    // no matter what - 
+    // shuffle the friends
     const shuffled = friends.sort(() => Math.random() - 0.5)
 
+    // set the state of friends to the new friends array (with the clicked as true) and shuffled
     this.setState({
       friends: shuffled,
-      score: this.state.score + 1 
+      // score: this.state.score + 1 
     });
 
     if (this.state.score < this.state.highScore)
@@ -67,7 +92,6 @@ render (){
           image={friend.image} 
           occupation={friend.occupation} 
           location={friend.location} 
-         
           cardClick ={this.cardClick}
 
           />
