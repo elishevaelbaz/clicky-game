@@ -1,7 +1,5 @@
 import React from "react";
 import FriendCard from "./components/FriendCard";
-import RemoveAllFriends from "./components/RemoveAllFriends";
-import GetFriends from "./components/GetFriends";
 import Navbar from "./components/Navbar/Navbar.js";
 import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
@@ -78,11 +76,11 @@ class App extends React.Component{
     return (
     
       <div className="row">
-      <h1 className="title">Friends List</h1>
+      <h2 id="instructions">Click on an image to earn points, but remember what you've already clicked. Click on one twice and you lose!</h2>
     
-      Score: {this.state.score}
-      Top Score: {this.state.highScore}
+      
     <Wrapper>
+      <Navbar score={this.state.score} highScore={this.state.highScore}></Navbar>
     
 
     {(this.state.friends).map(friend =>{
@@ -95,7 +93,7 @@ class App extends React.Component{
       location={friend.location} 
       cardClick ={this.cardClick}
       // will be true if they lost, but not when the page first loads up
-      shake = {this.state.score === 0 && this.state.score !=== 0}
+      shake = {this.state.score === 0 && this.state.score !== 0}
 
       />
       })

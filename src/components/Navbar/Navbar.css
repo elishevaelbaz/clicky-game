@@ -1,0 +1,36 @@
+.navbar{
+	color:white;
+	height:100px;
+
+}
+
+.title {
+  /*width: 33%;*/
+  text-align: center;
+  
+  margin-bottom: 0px !important;
+ font-family: 'Cinzel', serif;
+ font-size:48px;
+ position:fixed;
+ top: 10px;
+ left:35%;
+
+
+}
+
+h3{
+	width:33%;
+	margin-right:5%;
+	
+
+}
+
+#scoreDisplay{
+	position:fixed;
+	top:0px;
+}
+
+#topScoreDisplay{
+	position:fixed;
+	top:30px;
+}
