@@ -35,3 +35,23 @@ h3{
 	position:fixed;
 	top:30px;
 }
+
+#message{
+	position:fixed;
+	margin-right: 0%;
+	right:-80px;
+	top:10px;
+}
+
+/* The animation code */
+@keyframes incorrect {
+    from {color: white;}
+    to {color: red;}
+}
+
+/* The element to apply the animation to */
+.incorrect {
+    color: white;
+    animation-name: incorrect;
+    animation-duration: 0.5s;
+}
