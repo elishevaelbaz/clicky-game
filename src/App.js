@@ -76,7 +76,7 @@ class App extends React.Component{
     return (
     
       <div className="row">
-      <h2 id="instructions">Click on an image to earn points, but remember what you've already clicked. Click on one twice and you lose!</h2>
+      <h2>Click on an image to earn points, but remember what you've already clicked. Click on image twice and you lose!</h2>
     
       
     <Wrapper>
@@ -93,7 +93,7 @@ class App extends React.Component{
       location={friend.location} 
       cardClick ={this.cardClick}
       // will be true if they lost, but not when the page first loads up
-      shake = {this.state.score === 0 && this.state.score !== 0}
+      shake = {this.state.score === 0 && this.state.highScore !== 0}
 
       />
       })
