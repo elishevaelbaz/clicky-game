@@ -2,8 +2,8 @@ import React from "react";
 import "./FriendCard.css";
 
 const FriendCard = props => (
-  <div className="card">
-    <div className={props.shake == true ? "shake img-container" : "img-container"} onClick={() => props.cardClick(props.id)}>
+  <div className={props.shake == true ? "shake card" : "card"}>
+    <div className="img-container" onClick={() => props.cardClick(props.id)}>
       <img alt={props.name} src={props.image} />
     </div>
     

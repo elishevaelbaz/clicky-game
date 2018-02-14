@@ -9,7 +9,8 @@ class App extends React.Component{
   state = {
     friends,
     score: 0,
-    highScore: 0
+    highScore: 0,
+    message: "Click an image to begin"
   };
 
   // when the component updates
@@ -24,6 +25,7 @@ class App extends React.Component{
       }
     }
 
+
 // when user clicks on a card
   cardClick = (id) => {
     
@@ -37,7 +39,8 @@ class App extends React.Component{
       //you guessed incorrectly
       
       this.setState({
-        score: 0
+        score: 0,
+        message: "You chose incorrectly"
       });
       
       //set them all back to false
@@ -52,13 +55,15 @@ class App extends React.Component{
       console.log(friends[index])
 
       this.setState({
-        score: this.state.score + 1 
+        score: this.state.score + 1,
+        message: "You chose correctly"
       });
 
       console.log("score: " + this.state.score)
       console.log("highscore: " + this.state.highScore)
     
     }
+    
 
     // no matter what (if already been clicked or not)- 
     // shuffle the friends
@@ -68,8 +73,12 @@ class App extends React.Component{
     this.setState({
       friends: shuffled 
     });
+
+    // this.displayMessage
     
   }
+
+
 
 
   render (){
@@ -80,7 +89,7 @@ class App extends React.Component{
     
       
     <Wrapper>
-      <Navbar score={this.state.score} highScore={this.state.highScore}></Navbar>
+      <Navbar score={this.state.score} highScore={this.state.highScore} message={this.state.message}></Navbar>
     
 
     {(this.state.friends).map(friend =>{
@@ -94,6 +103,8 @@ class App extends React.Component{
       cardClick ={this.cardClick}
       // will be true if they lost, but not when the page first loads up
       shake = {this.state.score === 0 && this.state.highScore !== 0}
+      
+
 
       />
       })
