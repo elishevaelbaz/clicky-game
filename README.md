@@ -2,9 +2,9 @@
 
 ## Overview
 
-This application is a  memory game using React. This application breaks up it's UI into components, manages component state, and responds to user events.
+This application is a memory game using React. This application breaks up it's UI into components, manages component state, and responds to user events.
 
-Check out the deployed GitHub Pages [here](https://elishevaelbaz.github.io/clicky-game/ "GitHub Pages link")
+Try out the game [here](https://elishevaelbaz.github.io/clicky-game/ "GitHub Pages link")
 
 ## Game Play
 
