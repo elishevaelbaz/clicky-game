@@ -6,7 +6,7 @@ This application is a  memory game using React. This application breaks up it's 
 
 Check out the deployed GitHub Pages [here](https://elishevaelbaz.github.io/clicky-game/ "GitHub Pages link")
 
-### Game Play
+## Game Play
 
 ![demo](public/images/demo.gif)
 
