@@ -1,29 +1,23 @@
 .navbar{
 	color:white;
 	height:85px;
-
 }
 
 .title {
   /*width: 33%;*/
   text-align: center;
-  
   margin-bottom: 0px !important;
- font-family: 'Cinzel', serif;
- font-size:48px;
- position:fixed;
- top: 10px;
- left:35%;
-
-
+ 	font-family: 'Cinzel', serif;
+ 	font-size:48px;
+ 	position:fixed;
+ 	top: 10px;
+ 	left:35%;
 }
 
 h3{
 	width:33%;
 	margin-right:5%;
 	margin-top:15px;
-	
-
 }
 
 #scoreDisplay{
@@ -38,8 +32,8 @@ h3{
 
 #message{
 	position:fixed;
-	margin-right: 0%;
-	right:-80px;
+	margin-right: 15px;
+	right:-140px;
 	top:10px;
 }
 
@@ -55,3 +49,5 @@ h3{
     animation-name: incorrect;
     animation-duration: 0.5s;
 }
+
+
